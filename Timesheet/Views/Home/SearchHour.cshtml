@@ -1,0 +1,55 @@
+﻿@model Timesheet.Models.HoursViewModel
+
+@{
+    ViewBag.Title = "SearchHour";
+}
+
+<br />
+<a href="/Home" class="btn btn-danger">Back</a>
+<div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="col-lg-6 col-md-6 col-sm-6">
+        <h2>Hours Per Person</h2>
+
+        <table class="table">
+            <tr>
+                <th>Username</th>
+                <th>Hours</th>
+            </tr>
+
+            @foreach (var item in Model.PersonH)
+            {
+                <tr>
+                    <td>@item.Username</td>
+                    <td>@item.PeHours</td>
+                    @*<td>
+                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                        </td>*@
+                </tr>
+            }
+
+        </table>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-6">
+        <h2>Hours Per Project</h2>
+
+        <table class="table">
+            <tr>
+                <th>Project</th>
+                <th>Hours</th>
+            </tr>
+
+            @foreach (var item in Model.ProjectH)
+            {
+                <tr>
+                    <td>@item.Project</td>
+                    <td>@item.PrHours</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+</div>
